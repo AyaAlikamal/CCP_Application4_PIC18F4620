@@ -1,0 +1,412 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3377 `(v ~T0 @X0 0 tf ]
+"8 application.c
+[; ;application.c: 8: timer3_config_t timer3;
+[c E3185 0 1 .. ]
+[n E3185 . Interrupt_Periority_LOW Interrupt_Periority_HIGH  ]
+"45 ./MCAL_Layer/Timer3/hal_timer3.h
+[; ;./MCAL_Layer/Timer3/hal_timer3.h: 45: typedef struct{
+[s S288 `*F3377 1 `E3185 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `us 1 :3 `uc 1 :2 `uc 1 ]
+[n S288 . TMR3_Interrupt_Hundeler Timer_priority timer3_mode timer3_counter_mode timer3_register_wr_mode timer3_preload_value timer3_reserved timer3_prescaller ]
+"9 application.c
+[; ;application.c: 9: ccp_t ccp_obj;
+[c E3396 0 1 .. ]
+[n E3396 . CCP1_Module CCP2_Module  ]
+[c E3400 0 1 2 .. ]
+[n E3400 . CCP_CAPTURE_MODE_SELECTED CCP_COMPARE_MODE_SELECTED CCP_PWM_MODE_SELECTED  ]
+"74 ./MCAL_Layer/CCP1/../GPIO/hal_gpio.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin direction logic ]
+"9 application.c
+[; ;application.c: 9: ccp_t ccp_obj;
+[c E3405 0 1 2 .. ]
+[n E3405 . CCP1_CCP2_TIMER3 CCP1_TIMER1_CCP2_TIMER3 CCP1_CC2_TIMER1  ]
+[v F3429 `(v ~T0 @X0 0 tf ]
+[v F3432 `(v ~T0 @X0 0 tf ]
+"89 ./MCAL_Layer/CCP1/hal_ccp1.h
+[; ;./MCAL_Layer/CCP1/hal_ccp1.h: 89: typedef struct{
+[s S292 `E3396 1 `E3400 1 `uc 1 `S273 1 `E3405 1 :2 `uc 1 :2 `uc 1 `ui 1 `*F3429 1 `E3185 1 `*F3432 1 `E3185 1 ]
+[n S292 . ccp_module_type ccp_mode ccp_mode_variant ccp_pin ccp_ct timer2_prescaler_value timer2_postscaler_value PWM_Freq CCP1_Interrupt_Hundeler CCP1_priority CCP2_Interrupt_Hundeler CCP2_priority ]
+[p mainexit ]
+[v F3473 `(v ~T0 @X0 0 tf ]
+"22 application.c
+[; ;application.c: 22: ccp_obj.ccp_pin.port = PORTC_INDEX;
+[c E2986 0 1 2 3 4 .. ]
+[n E2986 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+"23
+[; ;application.c: 23: ccp_obj.ccp_pin.pin = PIN2;
+[c E2976 0 1 2 3 4 5 6 7 .. ]
+[n E2976 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+"24
+[; ;application.c: 24: ccp_obj.ccp_pin.direction = Input;
+[c E2972 0 1 .. ]
+[n E2972 . Output Input  ]
+"112 ./MCAL_Layer/CCP1/hal_ccp1.h
+[; ;./MCAL_Layer/CCP1/hal_ccp1.h: 112: Std_ReturnType CCP_CAPTURE_Init(const ccp_t *ccp_obj);
+[v _CCP_CAPTURE_Init `(uc ~T0 @X0 0 ef1`*CS292 ]
+"54 ./MCAL_Layer/CCP1/../../../../Embeded-Compiler/pic/include/proc/pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"8 application.c
+[; ;application.c: 8: timer3_config_t timer3;
+[v _timer3 `S288 ~T0 @X0 1 e ]
+"9
+[; ;application.c: 9: ccp_t ccp_obj;
+[v _ccp_obj `S292 ~T0 @X0 1 e ]
+"10
+[; ;application.c: 10: uint_32 CCP1_Interrupt_Flag = 0;
+[v _CCP1_Interrupt_Flag `ui ~T0 @X0 1 e ]
+[i _CCP1_Interrupt_Flag
+-> -> 0 `i `ui
+]
+"11
+[; ;application.c: 11: void CCP1_DefualtInterruptHundeler(){
+[v _CCP1_DefualtInterruptHundeler `(v ~T0 @X0 1 ef ]
+{
+[e :U _CCP1_DefualtInterruptHundeler ]
+[f ]
+"12
+[; ;application.c: 12: CCP1_Interrupt_Flag++;
+[e ++ _CCP1_Interrupt_Flag -> -> 1 `i `ui ]
+"13
+[; ;application.c: 13: }
+[e :UE 293 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"15
+[; ;application.c: 15: int main() {
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"17
+[; ;application.c: 17: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"18
+[; ;application.c: 18: ccp_obj.CCP1_Interrupt_Hundeler = CCP1_DefualtInterruptHundeler;
+[e = . _ccp_obj 8 -> &U _CCP1_DefualtInterruptHundeler `*F3473 ]
+"19
+[; ;application.c: 19: ccp_obj.ccp_module_type = CCP1_Module;
+[e = . _ccp_obj 0 . `E3396 0 ]
+"20
+[; ;application.c: 20: ccp_obj.ccp_mode = CCP_CAPTURE_MODE_SELECTED;
+[e = . _ccp_obj 1 . `E3400 0 ]
+"21
+[; ;application.c: 21: ccp_obj.ccp_mode_variant = ((uint_8)0x05);
+[e = . _ccp_obj 2 -> -> 5 `i `uc ]
+"22
+[; ;application.c: 22: ccp_obj.ccp_pin.port = PORTC_INDEX;
+[e = . . _ccp_obj 3 0 -> . `E2986 2 `uc ]
+"23
+[; ;application.c: 23: ccp_obj.ccp_pin.pin = PIN2;
+[e = . . _ccp_obj 3 1 -> . `E2976 2 `uc ]
+"24
+[; ;application.c: 24: ccp_obj.ccp_pin.direction = Input;
+[e = . . _ccp_obj 3 2 -> . `E2972 1 `uc ]
+"25
+[; ;application.c: 25: ret = CCP_CAPTURE_Init(&ccp_obj);
+[e = _ret ( _CCP_CAPTURE_Init (1 -> &U _ccp_obj `*CS292 ]
+"26
+[; ;application.c: 26: while(1){
+[e :U 296 ]
+{
+"29
+[; ;application.c: 29: }
+}
+[e :U 295 ]
+[e $U 296  ]
+[e :U 297 ]
+"30
+[; ;application.c: 30:  return (0);
+[e ) -> 0 `i ]
+[e $UE 294  ]
+"31
+[; ;application.c: 31: }
+[e :UE 294 ]
+}
+"32
+[; ;application.c: 32: void application_initialize(void){
+[v _application_initialize `(v ~T0 @X0 1 ef ]
+{
+[e :U _application_initialize ]
+[f ]
+"33
+[; ;application.c: 33:    Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"35
+[; ;application.c: 35: }
+[e :UE 298 ]
+}
